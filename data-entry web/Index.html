@@ -1,0 +1,286 @@
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      .register {
+        background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+        margin-top: 3%;
+        padding: 3%;
+      }
+
+      .register-left {
+        text-align: center;
+        color: #fff;
+        margin-top: 4%;
+      }
+
+      .register-left input {
+        border: none;
+        border-radius: 1.5rem;
+        padding: 2%;
+        width: 60%;
+        background: #f8f9fa;
+        font-weight: bold;
+        color: #383d41;
+        margin-top: 30%;
+        margin-bottom: 3%;
+        cursor: pointer;
+      }
+
+      .register-right {
+        background: #f8f9fa;
+        border-top-left-radius: 10% 50%;
+        border-bottom-left-radius: 10% 50%;
+      }
+
+      .register-left img {
+        margin-top: 15%;
+        margin-bottom: 5%;
+        width: 25%;
+        -webkit-animation: mover 2s infinite alternate;
+        animation: mover 1s infinite alternate;
+      }
+
+      @-webkit-keyframes mover {
+        0% {
+          transform: translateY(0);
+        }
+
+        100% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes mover {
+        0% {
+          transform: translateY(0);
+        }
+
+        100% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .register-left p {
+        font-weight: lighter;
+        padding: 12%;
+        margin-top: -9%;
+      }
+
+      .register .register-form {
+        padding: 10%;
+        margin-top: 10%;
+      }
+
+      .btnRegister {
+        float: right;
+        margin-top: 10%;
+        border: none;
+        border-radius: 1.5rem;
+        padding: 2%;
+        background: #0062cc;
+        color: #fff;
+        font-weight: 600;
+        width: 50%;
+        cursor: pointer;
+      }
+
+      .register .nav-tabs {
+        margin-top: 3%;
+        border: none;
+        background: #0062cc;
+        border-radius: 1.5rem;
+        width: 28%;
+        float: right;
+      }
+
+      .register .nav-tabs .nav-link {
+        padding: 2%;
+        height: 34px;
+        font-weight: 600;
+        color: #fff;
+        border-top-right-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+      }
+
+      .register .nav-tabs .nav-link:hover {
+        border: none;
+      }
+
+      .register .nav-tabs .nav-link.active {
+        width: 100px;
+        color: #0062cc;
+        border: 2px solid #0062cc;
+        border-top-left-radius: 1.5rem;
+        border-bottom-left-radius: 1.5rem;
+      }
+
+      .register-heading {
+        text-align: center;
+        margin-top: 8%;
+        margin-bottom: -15%;
+        color: #495057;
+      }
+    </style>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <?!= include('JavaScript'); ?>
+  </head>
+  <body>
+    <!------ FORM ---------->
+    <form id="myForm" onsubmit="handleFormSubmit(this)">
+      <div class="container register">
+        <div class="row">
+          <div class="col-md-3 register-left">
+            <img src="https://foodizz.oss-ap-southeast-5.aliyuncs.com/Pegawai/FotoProfil/Logo%20Foodizz_Full%20Color%20(2)%20small-bhJjP.jpg" alt="" />
+            <h3>SELAMAT DATANG</h3>
+            <p>Masukkan File Langsung ke Dalam Folder Spesifik di Google Drive</p>
+            <p>oleh: Tim Kurikulum Foodizz</p>
+          </div>
+          <div class="col-md-9 register-right">
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <h3 class="register-heading">Website Data Entry Tim Kurikulum</h3>
+                <div class="row register-form">
+                  <!-- Kolom bagian kiri -->
+                  <div class="col-md-6">
+                    <!------ Nama Pemilik File ---------->
+                    <div class="form-group">
+                      <div class="maxl">
+                        <input type="text" class="form-control" name="name_" placeholder="Nama Pengunggah File" required>
+                      </div>
+                    </div>
+                    <!------ Main Folder ---------->
+                    <div class="form-group">
+                      <div class="maxl">
+                        <label for="event_k" class="radio inline">Kategori Event (Main Folder):</label>
+                        <select id="event_k" name="event_k">
+
+                          <!-- Tambahkan folder baru dengan salin satu baris dan ganti nama foldernya -->
+                          <option value="Kelas Staf Karyawan Outlet">Kelas Staf Karyawan Outlet</option>
+
+                          <option value="Business Plan">Business Plan</option>
+                          <option value="CEO Class">CEO Class</option>
+                          <option value="Dokumen Pendukung">Dokumen Pendukung</option>
+                          <option value="E-Magz">E-Magz</option>
+                          <option value="E-Book">E-Book</option>
+                          <option value="FMC">FMC</option>
+                          <option value="FOC">FOC</option>
+                          <option value="Foodizz Insight">Foodizz Insight</option>
+                          <option value="Free Webinar">Free Webinar</option>
+                          <option value="Internal Kurikulum">Internal Kurikulum</option>
+                          <option value="Kelas Manager/Supervisor Cafe&Restoran">Kelas Manager/Supervisor Cafe&Restoran</option>
+                          <option value="KSB">KSB</option>
+                          <option value="MBK">MBK</option>
+                          <option value="Partnership">Partnership</option>
+                          <option value="Riset">Riset</option>
+                          <option value="SBK Offline">SBK Offline</option>
+                          <option value="SBK Online">SBK Online</option>
+                          <option value="Special Event">Special Event</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!------ Sub Folder ---------->
+                    <div class="form-group">
+                      <div class="maxl">
+                        <label for="sub_program">Sub Kategori :</label>
+                        <input type="text" class="form-control" id="sub_program" name="sub_program" placeholder="Sub Folder FOC 1 / Modul / Marketing" required>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Kolom bagian kanan -->
+                  <!------ Tahun File Dibuat ---------->
+                  <div class="col-md-6">
+                    <!------ Pilar Konten ---------->
+                    <div class="form-group">
+                      <label for="pilar">Jenis Pilar File:</label>
+                      <select id="pilar" name="pilar">
+                        <option value="Marketing">Marketing</option>
+                        <option value="Operation">Operation</option>
+                        <option value="SCM">SCM</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Expansion">Expansion</option>
+                        <option value="Organization">Organization</option>
+                        <option value="Legal & Tax">Legal & Tax</option>
+                        <option value="Business Strategic & General">Business Strategic & General</option>
+                      </select>
+                    </div>
+                    <!------ Upload File ---------->
+                    <div class="form-group">
+                      <input name="myFile" class="form-control-file" type="file" id="myFile" multiple/>
+                    </div>
+                    <p>Template Nama File: Folder_SubFolder_{OptionalDay}_SpecificFileName Contoh: FOC_FOC21_Day1_MembuatSOPPenyusunanSOP.pdf</p>
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+    <br>
+    <div id="output"></div>
+    </div>
+    
+  </body>
+</html>
+<style>
+  .footer,
+  .generic-footer {
+    margin-bottom: 98px
+  }
+
+  @media (min-width:374px) {
+
+    .footer,
+    .generic-footer {
+      margin-bottom: 78px
+    }
+  }
+
+  @media (min-width:546px) {
+
+    .footer,
+    .generic-footer {
+      margin-bottom: 56px
+    }
+  }
+
+  @media (min-width:1055px) {
+
+    .footer,
+    .generic-footer {
+      margin-bottom: 0
+    }
+  }
+
+  .disclaimer {
+    position: fixed;
+    z-index: 9999999;
+    bottom: 0;
+    right: 0;
+    border-top: 2px solid #ff5c62;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #fff;
+    padding: 5px 10px 5px 10px
+  }
+
+  .disclaimer a:hover {
+    text-decoration: underline
+  }
+
+  @media (min-width:1052px) {
+    .disclaimer {
+      text-align: right;
+      border-left: 2px solid red;
+      border-top-left-radius: 10px
+    }
+  }
+
+  @media (min-width:1920px) {
+    .disclaimer {
+      width: 60%
+    }
+  }
+</style>
